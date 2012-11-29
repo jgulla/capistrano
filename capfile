@@ -1,0 +1,18 @@
+role :checklibs, "capdemo"
+role :checkuser, "capdemo"
+set :user, "vagrant"
+
+desc "List files in /usr/lib"
+task :list_dir do
+  run "ls -x1 /usr/lib"
+end
+
+desc "Count files in /usr/lib"
+task :count_files do
+  run "ls -x1 /usr/lib | wc -l"
+end
+
+desc "who am I?"
+task :whoami, :roles => :checkuser do
+  run "whoami"
+end

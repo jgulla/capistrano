@@ -1,0 +1,21 @@
+role :checklibs, "capdemo"
+role :checkuser, "capdemo"
+set :user, "vagrant"
+
+desc "List files in /usr/lib"
+task :list_dir do
+  run "ls -x1 /usr/lib"
+end
+
+task :count_files do
+  run "ls -x1 /usr/lib | wc -l"
+end
+
+task :whoami, :roles => :checkuser do
+  run "whoami"
+end
+
+task :xfer do
+  %x(mvn install)
+  upload "target/capid.war", "/tmp", :via => :scp
+end
