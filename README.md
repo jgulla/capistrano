@@ -11,7 +11,8 @@ mvn archetype:generate -DgroupId=rwx.cap -DartifactId=capid -DarchetypeArtifactI
 
 # Java option to use /dev/urandom instead of /dev/random
 export JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom
-See (http://tomcat.10.n6.nabble.com/Hanging-on-startup-td4571254.html)
-and (http://stackoverflow.com/questions/137212/how-to-solve-performance-problem-with-java-securerandom)
+
+See http://tomcat.10.n6.nabble.com/Hanging-on-startup-td4571254.html
+and http://stackoverflow.com/questions/137212/how-to-solve-performance-problem-with-java-securerandom
 
 
